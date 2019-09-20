@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns = "http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeLeaf.org">
 <head>
-<title>Listagem de Ofertas</title>
+<title>Listagem de Clientes</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="panel-default">
 			<div class="text-center">
-				<h1 class="h4 text-gray-900 mb-4">Listagem de Ofertas</h1>
+				<h1 class="h4 text-gray-900 mb-4">Listagem de Clientes</h1>
 			</div>
 			<div class="panel-body">
 				<div class="table-resposive">
@@ -19,25 +19,25 @@
 						<thead>
 						<tr>
 							<th>ID</th>
-							<th>DESCRIÇÃO</th>
-							<th>PREÇO</th>
-							<th>STATUS</th>
-							<th>DATA INICIO</th>
-							<th>DATA FINAL</th>						
+							<th>NOME</th>
+							<th>SOBRENOME</th>
+							<th>EMAIL</th>
+							<th>CPF</th>
+							<th>STATUS</th>						
 						</tr>
 						<tbody>
-							<tr th:each="oferta : ${ofertas}">
-							<td th:text="${oferta.id}"></td>
-							<td th:text="${oferta.descricao}"></td>
-							<td th:text="${oferta.preco}"></td>
-							<td th:text="${oferta.status}"></td>
-							<td th:text="${oferta.dataInicio}"></td>
-							<td th:text="${oferta.dataFinal}"></td>
+							<tr th:each="cliente : ${clientes}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.nome}"></td>
+							<td th:text="${cliente.sobreNome}"></td>
+							<td th:text="${cliente.email}"></td>
+							<td th:text="${cliente.cpf}"></td>
+							<td th:text="${cliente.status}"></td>
 							<td>
 								<div class="btn-group pull-right">
-									<a class= "btn btn-sm btn-warning" th:href="@{/oferta/alterar/{id}(id=${oferta.id})}">ALTERAR</a>
+									<a class= "btn btn-sm btn-warning" th:href="@{/cliente/alterar/{id}(id=${cliente.id})}">ALTERAR</a>
 								</div>
-								<td/>
+                            </td>
 							</tr>
 						</tbody>
 						</thead>
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-		<a class="btn btn-sm btn-success" th:href="@{/oferta/cadastrar}">CADASTRAR NOVA OFERTA</a>
+		<a class="btn btn-sm btn-success" th:href="@{/cliente/cadastrar}">CADASTRAR NOVO CLIENTE</a>
 	</div>
 </body>
 </html>

@@ -36,11 +36,11 @@
 			
 
 			<label>Data Inicio</label>
-			<input type="text" class="form-control input-sm" th:field="*{dataInicio}" autofocus="autofocus" placeholder="" maxlength="50"/>
+			<input type="text" class="form-control input-sm" th:field="*{dataInicio}" autofocus="autofocus" placeholder=""/>
 
 
 			<label>Data Final</label>
-			<input type="text" class="form-control input-sm" th:field="*{dataFinal}" autofocus="autofocus" placeholder="" maxlength="50"/>
+			<input type="text" class="form-control input-sm" th:field="*{dataFinal}" autofocus="autofocus" placeholder=""/>
 			</div>
 			</fieldset>
 			</div>
@@ -48,6 +48,7 @@
 				<button type="submit" class="btn btn-sm btn-success">SALVAR</button>
 				<a th:href="@{/oferta/listar}" class="btn btn-sm btn-danger">CANCELA</a>
 			</div>
+			</form>
 		</div>
 		
 	</div>

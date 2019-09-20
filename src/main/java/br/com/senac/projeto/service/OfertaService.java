@@ -34,6 +34,7 @@ public class OfertaService {
 		oferta.setId(ofertaAlterada.getId());
 		oferta.setDescricao(ofertaAlterada.getDescricao());
 		oferta.setPreco(ofertaAlterada.getPreco());
+		oferta.setDataInicio(ofertaAlterada.getDataInicio());
 		oferta.setDataFinal(ofertaAlterada.getDataFinal());
 		oferta.setStatus(ofertaAlterada.getStatus());
 		return salvar(oferta);

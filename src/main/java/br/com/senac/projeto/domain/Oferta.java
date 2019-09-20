@@ -11,13 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 public class Oferta implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6709999500452703504L;
 
 	@Id
@@ -25,21 +23,16 @@ public class Oferta implements Serializable{
 	private Integer id;
 	
 	
-	@Column
 	private String descricao;
 	
-	@Column
 	private BigDecimal preco;
 	
-	@DateTimeFormat(pattern="yyyy-mm-dd")
-	@Column
+	@DateTimeFormat(pattern="dd/MM/yyyy", iso=ISO.DATE)
 	private LocalDate dataInicio;
 	
-	
-	@Column
+	@DateTimeFormat(pattern="dd/MM/yyyy", iso=ISO.DATE)
 	private LocalDate dataFinal;
 	
-	@Column
 	private boolean status;
 
 	public Integer getId() {
@@ -57,7 +50,6 @@ public class Oferta implements Serializable{
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 
 	public BigDecimal getPreco() {
 		return preco;
@@ -90,5 +82,7 @@ public class Oferta implements Serializable{
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
+
+
 
 }

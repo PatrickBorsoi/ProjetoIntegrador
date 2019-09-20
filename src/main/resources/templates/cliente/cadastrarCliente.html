@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns = "http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeLeaf.org">
 <head>
-<title>Cadastro de Oferta</title>
+<title>Cadastro de CLiente</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -10,45 +10,39 @@
 <body>
 	<div class ="container">
 		<div class ="panel-heading" aling = "center">
-			<strong>CADASTRO DE OFERTAS</strong>
+			<strong>CADASTRO DE CLIENTES</strong>
 		</div>
 		
 		<div class="panel-body border">
-			<form class = "form-horizontal" th:object="${oferta}" th:action="@{/oferta/salvar}" method="POST" style="margin: 10px">
+			<form class = "form-horizontal" th:object="${cliente}" th:action="@{/cliente/salvar}" method="POST" style="margin: 10px">
 			<div class = "form-group">
 			<fieldset>
 			<div>
-			<label>Descrição</label>
-			<input type="text" class="form-control input-sm" th:field="*{descricao}" autofocus="autofocus" placeholder="" maxlength="50"/>
+			<label>Nome</label>
+			<input type="text" class="form-control input-sm" th:field="*{nome}" autofocus="autofocus" placeholder="" maxlength="50"/>
 			
 			
-			<label>Preço</label>
-			<input type="number" class="form-control input-sm" th:field="*{preco}" autofocus="autofocus" placeholder="" maxlength="50"/>
-
-			
-
+			<label>Sobrenome</label>
+			<input type="text" class="form-control input-sm" th:field="*{sobreNome}" autofocus="autofocus" placeholder="" maxlength="50"/>
+            
+            <label>Email</label>
+			<input type="email" class="form-control input-sm" th:field="*{email}" autofocus="autofocus" placeholder="" maxlength="50"/>
+            
+            <label>CPF</label>
+			<input type="cpf" class="form-control input-sm" th:field="*{cpf}" autofocus="autofocus" placeholder="" maxlength="50"/>
+	
 			<label>Status</label>
 			<select class="form-control"th:field="*{status}">
   				<option value="1">ativo</option>
   				<option value="0">desativo</option>
 			</select>				
-
-			
-
-			<label>Data Inicio</label>
-			<input type="text" class="form-control input-sm" th:field="*{dataInicio}" autofocus="autofocus" placeholder=""/>
-
-
-			<label>Data Final</label>
-			<input type="text" class="form-control input-sm" th:field="*{dataFinal}" autofocus="autofocus" placeholder=""/>
 			</div>
 			</fieldset>
 			</div>
 			<div align="center">
 				<button type="submit" class="btn btn-sm btn-success">SALVAR</button>
-				<a th:href="@{/oferta/listar}" class="btn btn-sm btn-danger">CANCELA</a>
+				<a th:href="@{/cliente/listar}" class="btn btn-sm btn-danger">CANCELA</a>
 			</div>
-			</form>
 		</div>
 		
 	</div>
