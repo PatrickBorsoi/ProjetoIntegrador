@@ -32,16 +32,16 @@
   				<option value="1">ativo</option>
   				<option value="0">desativo</option>
 			</select>				
-
-			
-
 			<label>Data Inicio</label>
 			<input type="text" class="form-control input-sm" th:field="*{dataInicio}" autofocus="autofocus" placeholder=""/>
-
-
 			<label>Data Final</label>
 			<input type="text" class="form-control input-sm" th:field="*{dataFinal}" autofocus="autofocus" placeholder=""/>
 			</div>
+			<label>Produto</label>
+			<select class="form-control" th:field="*{produto}">
+				<option th:value="${produto.id}" th:text = "${produto.nome}" th:each="produto : ${produtos}">
+			</select>	
+			
 			</fieldset>
 			</div>
 			<div align="center">

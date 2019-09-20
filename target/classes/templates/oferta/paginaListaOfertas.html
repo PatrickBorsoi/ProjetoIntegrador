@@ -20,15 +20,17 @@
 						<tr>
 							<th>ID</th>
 							<th>DESCRIÇÃO</th>
+							<th>PRODUTO DA OFERTA</th>
 							<th>PREÇO</th>
 							<th>STATUS</th>
 							<th>DATA INICIO</th>
-							<th>DATA FINAL</th>						
+							<th>DATA FINAL</th>				
 						</tr>
 						<tbody>
 							<tr th:each="oferta : ${ofertas}">
 							<td th:text="${oferta.id}"></td>
 							<td th:text="${oferta.descricao}"></td>
+							<td th:text="${oferta.produto.nome}">
 							<td th:text="${oferta.preco}"></td>
 							<td th:text="${oferta.status}"></td>
 							<td th:text="${oferta.dataInicio}"></td>
